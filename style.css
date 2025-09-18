@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    font-family: 'Open Sans', 'Lato', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background-color: #F3EFF5;; 
+}
+
+header{
+    background-color: #3F7D20;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
+}
+
+header h1{
+    color: #F3EFF5;
+    font-size: 32px;
+}
+
+.nav-links-list{
+
+    list-style-type: none;
+    font-size: clamp(0.7rem, 16px, 1.5rem);
+    
+    column-gap: 36px;
+}
+
+.navbar a   {
+    color: #F3EFF5;
+    text-decoration: none;
+}
+
+.header-contents{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-contents{
+    display: flex;
+    column-gap: clamp(1rem, 2vw + 1rem, 3rem);
+}
+
+.nav-link{
+    flex-direction: column;
+}
+
+.search-bar, .hamburger-bar{
+    color: #F3EFF5;
+}
+
+/* muncul saat ukuran layar <= 600px */
+.hamburger-links-list{
+    list-style-type: none;
+}
+
+.hamburger-menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hamburger-menu-toggle{
+    display: none;
+}
+
+.hamburger-contents{
+    display: none;
+}
+
+.util-icons{
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+/* pilihan menu hamburger list saat width kecil */
+.header .hamburger-list {
+    flex-direction: row;
+}
+
+.hamburger-contents {
+    display: none;
+    text-align: center;
+    justify-content: center;
+}
+
+.hamburger-link-container>li a {
+    text-decoration: none;
+    color: #F3EFF5;
+}
+
+.hamburger-link-container li{
+    margin-bottom: 8px;
+}
+
+#hamburger-home-button{
+    margin-top: 12px;
+}
+
+#hamburger-menu-toggle:checked ~ .hamburger-contents {
+    background-color: #0D0A0B;
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+}
+
+/* monitor kecil */
+@media only screen and (max-width: 1200px) {
+    header h1 {
+        font-size: clamp(1.25rem, 3vw, 2rem);
+    }
+    *{
+        font-size: clamp(0.8rem, 2vw, 1.05rem);
+    }
+}
+
+/* tablet kecil */
+@media only screen and (max-width: 992px) {    
+
+}
+
+/* hp */
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 14px;
+    }
+
+    #hamburger-menu-toggle:checked~.hamburger-contents {
+        display: inline-flex;
+    }
+
+    .hamburger-menu-button-container {
+        display: flex;
+    }
+
+    .nav-contents {
+        display: none;
+    }
+
+    .util-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
