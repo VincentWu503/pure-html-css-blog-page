@@ -8,8 +8,14 @@
     font-size: 14px;
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 html, body{
    background-color: #F3EFF5;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 header{
@@ -126,11 +132,38 @@ header h1{
 .page-container{
     color: black;
     padding-top: 96px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+}
+
+.page-container, .page-footer{
     padding-left: 124px;
     padding-right: 124px;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
+}
+
+.page-footer{
+    padding-top: 32px;
+    padding-bottom: 32px;
+    background-color: #0D0A0B;
+    color: #F3EFF5;
+    text-align: center;
+}
+
+.page-footer a{
+    color: #F3EFF5;
+}
+
+.page-footer i{
+    font-size: 32px;
+    margin: 5px;
+}
+
+.page-footer i:hover{
+    cursor: pointer;
 }
 
 .util-icons {
@@ -149,10 +182,8 @@ header h1{
 /* hot topic, widget terbesar */
 .hot-news-container, .latest-post-container{
     position: relative;
-    max-width: 800px;
-    max-height: 600px;
-    /* shadow is for css debugging purposes only */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    max-width: 760px;
+    min-height: 442px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -162,16 +193,21 @@ header h1{
 .hot-news-container .image-wrapper img{
     width: 100%;
     height: auto;
-    position: absolute;
-    z-index: 1;
+    overflow: hidden;
+    display: block;
+    border-radius: 4px;
     filter: brightness(90%);
 }
 
-.hot-news-container .redirect-button span svg{
+.redirect-button span svg{
     width: 20px;
     height: 20px;
     fill: #F3EFF5;
     transform: translateY(30%);
+}
+
+.latest-post-article-widget .redirect-button span svg, .most-popular-container .redirect-button span svg{
+    fill: black;
 }
 
 .hot-news-container .hot-article-title-container #hot-title{
@@ -184,10 +220,13 @@ header h1{
 }
 
 .hot-news-container .hot-article-title-container{
-    padding-left: 36px;
-    padding-right: 36px;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding: 36px;
+    padding-bottom: 32px;
 }
 
 .hot-news-container .hot-article-title-container a h2{
@@ -196,18 +235,93 @@ header h1{
 
 .latest-post-container{
     max-height: auto;
+    position: relative;
 }
+
+.latest-post-container h1{
+    padding-bottom: 0px;
+}
+
 
 .latest-post-container .latest-post-article-widget{
-    max-width: 800px;
     max-height: 256px;
-    background-color: aliceblue;
+    padding: 24px;
+    padding-left: 0px;
 }
 
-.latest-post-container .latest-post-article-widget img{
-    width: 192px;
-    height: 192px;
+.latest-post-container .latest-post-article-widget img, .popular-post-article-widget img{
+    max-width: 280px;
+    height: auto;
+    aspect-ratio: 4/3;
+    margin-right: 12px;
+    float: left;
+    border-radius: 4px;
 }
+
+.latest-post-container .latest-post-article-widget article {
+    text-align: justify;
+}
+
+.latest-post-container .latest-post-article-widget article a, .popular-post-article-widget a{
+    text-decoration: none;
+    color: black;
+}
+
+.latest-post-container .latest-post-article-widget article a h2{
+    font-size: 24px;
+}
+
+.latest-post-container .latest-post-article-widget article .redirect-button {
+    text-align: right;
+}
+
+/* hot topic dan latest */
+.left-container{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.pagination-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 32px;
+    margin-top: 0px;
+}
+
+/* most popular dan weekly popular articles */
+.right-container{
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    max-width: 450px;
+    gap: 36px;
+}
+
+.most-popular-container{
+    max-width: 450px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popular-post-article-widget img{
+    max-width: 160px;
+    aspect-ratio: 1/1;
+}
+
+.popular-post-article-widget h2{
+    font-size: 18px;
+}
+
+.most-popular-container h1{
+    padding-bottom: 0px;
+}
+
+
 
 /* monitor kecil */
 @media only screen and (max-width: 1200px) {
