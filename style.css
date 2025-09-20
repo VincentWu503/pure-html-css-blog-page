@@ -5,10 +5,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
-body{
-   background-color: #F3EFF5;; 
+html, body{
+   background-color: #F3EFF5;
 }
 
 header{
@@ -19,19 +20,16 @@ header{
     padding-top: 5px;
     padding-left: 24px;
     padding-right: 24px;
-    
+    position: absolute;
 }
 
 header h1{
     color: #F3EFF5;
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .nav-links-list{
-
     list-style-type: none;
-    font-size: clamp(0.7rem, 16px, 1.5rem);
-    
     column-gap: 36px;
 }
 
@@ -53,6 +51,7 @@ header h1{
 
 .nav-link{
     flex-direction: column;
+    font-size: 18px;
 }
 
 .search-bar, .hamburger-bar{
@@ -97,6 +96,7 @@ header h1{
     display: none;
     text-align: center;
     justify-content: center;
+    z-index: 10;
 }
 
 .hamburger-link-container>li a {
@@ -116,10 +116,97 @@ header h1{
     background-color: #0D0A0B;
     display: none;
     position: fixed;
-    top: 62px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
     width: 110%;
+}
+
+/* isi dari halaman blog */
+.page-container{
+    color: black;
+    padding-top: 96px;
+    padding-left: 124px;
+    padding-right: 124px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.util-icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.page-container h1{
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding-bottom: 16px;
+}
+
+/* hot topic, widget terbesar */
+.hot-news-container, .latest-post-container{
+    position: relative;
+    max-width: 800px;
+    max-height: 600px;
+    /* shadow is for css debugging purposes only */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+.hot-news-container .image-wrapper img{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    filter: brightness(90%);
+}
+
+.hot-news-container .redirect-button span svg{
+    width: 20px;
+    height: 20px;
+    fill: #F3EFF5;
+    transform: translateY(30%);
+}
+
+.hot-news-container .hot-article-title-container #hot-title{
+    padding-top: 36%;
+}
+
+.hot-news-container .hot-article-title-container a{
+    text-decoration: none;
+    color:#F3EFF5;
+}
+
+.hot-news-container .hot-article-title-container{
+    padding-left: 36px;
+    padding-right: 36px;
+    position: relative;
+    z-index: 1;
+}
+
+.hot-news-container .hot-article-title-container a h2{
+    font-size: 32px;
+}
+
+.latest-post-container{
+    max-height: auto;
+}
+
+.latest-post-container .latest-post-article-widget{
+    max-width: 800px;
+    max-height: 256px;
+    background-color: aliceblue;
+}
+
+.latest-post-container .latest-post-article-widget img{
+    width: 192px;
+    height: 192px;
 }
 
 /* monitor kecil */
@@ -127,24 +214,35 @@ header h1{
     header h1 {
         font-size: clamp(1.25rem, 3vw, 2rem);
     }
-    *{
-        font-size: clamp(0.8rem, 2vw, 1.05rem);
+
+    .nav-link{
+        font-size: clamp(0.9em, 2vw, 1.3em);
     }
 }
 
 /* tablet kecil */
 @media only screen and (max-width: 992px) {    
-
+    header{
+        max-height: 53px;
+    }   
 }
 
 /* hp */
 @media only screen and (max-width: 600px) {
-    * {
-        font-size: 14px;
+    .page-container {
+        padding-top: 64px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .page-container h1 {
+        font-size: clamp(1rem, 2vw + 1rem, 1.8rem);
+        font-weight: 700;
+        letter-spacing: 0.03em;
     }
 
     #hamburger-menu-toggle:checked~.hamburger-contents {
-        display: inline-flex;
+        display: flex;
     }
 
     .hamburger-menu-button-container {
@@ -155,9 +253,7 @@ header h1{
         display: none;
     }
 
-    .util-icons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .util-icons{
+        margin-top:4px;
     }
 }

@@ -23,10 +23,13 @@
                             <li><a class="nav-link" href="#">Home</a></li>
                         </div>
                         <div class="nav-link">
+                            <li><a class="nav-link" href="#">News</a></li>
+                        </div>
+                        <div class="nav-link">
                             <li><a class="nav-link" href="#">Games</a></li>
                         </div>
                         <div class="nav-link">
-                            <li><a class="nav-link" href="#">Contact</a></li>
+                            <li><a class="nav-link" href="#">Reviews</a></li>
                         </div>
                         <div class="nav-link">
                             <li><a class="nav-link" href="#">About Us</a></li>
@@ -38,7 +41,7 @@
 
             <div class="util-icons">
                 <i class="search-bar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
                         class="bi bi-search" viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
@@ -47,7 +50,7 @@
                 <input id="hamburger-menu-toggle" type="checkbox" />
                 <label class="hamburger-menu-button-container" for="hamburger-menu-toggle" onclick="">
                     <i class="hamburger-bar">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
                             class="bi bi-list" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
@@ -57,25 +60,78 @@
                 <div class="hamburger-contents">
                     <ul class="hamburger-links-list">
                         <div class="hamburger-link-container">
-                            <li id="hamburger-home-button"><a class="hamburger-link" href="#">Home</a></li>
+                            <li id="hamburger-home-button"><a class="hamburger-link" href="#test1">Home</a></li>
                         </div>
                         <div class="hamburger-link-container">
-                            <li><a class="hamburger-link" href="#">Games</a></li>
+                            <li><a class="hamburger-link" href="#test2">News</a></li>
                         </div>
                         <div class="hamburger-link-container">
-                            <li><a class="hamburger-link" href="#">Contact</a></li>
+                            <li><a class="hamburger-link" href="#test3">Games</a></li>
                         </div>
                         <div class="hamburger-link-container">
-                            <li><a class="hamburger-link" href="#">About Us</a></li>
+                            <li><a class="hamburger-link" href="#test4">Reviews</a></li>
+                        </div>
+                        <div class="hamburger-link-container">
+                            <li><a class="hamburger-link" href="#test5">About Us</a></li>
                         </div>
                     </ul>
                 </div>
             </div>
         </div>
-
     </header>
     <div class="page-container">
+        <div class="hot-news-container">
+            <h1>Hot Topic</h1>
+            <div class="image-wrapper">
+                <img src="images\game-development.webp" alt="Game Developer">
+            </div>
+            <article>
+                <div class="hot-article-title-container">
+                    <div id="hot-title">
+                        <a href="">
+                            <h2>
+                                Ten Tips on Becoming a Great Game Developer
+                            </h2>
+                        </a>
+                    </div>
+                    <div class="redirect-button">
+                        <span>
+                            <a href="">
+                                Read More
+                                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                    </g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <title>play-circle-solid</title>
+                                        <g id="Layer_2" data-name="Layer 2">
+                                            <g id="invisible_box" data-name="invisible box">
+                                                <rect width="48" height="48" fill="none"></rect>
+                                            </g>
+                                            <g id="icons_Q2" data-name="icons Q2">
+                                                <path
+                                                    d="M24,2A22,22,0,1,0,46,24,21.9,21.9,0,0,0,24,2ZM34.6,24.7,18.1,34.8c-.6.4-1.1.1-1.1-.6V13.8c0-.7.5-1,1.1-.6L34.6,23.3A.8.8,0,0,1,34.6,24.7Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
 
+                </div>
+
+            </article>
+        </div>
+        <div class="latest-post-container">
+            <h1>Latest Post</h1>
+            <div class="latest-post-article-widget">
+                <article>
+                    <img src="" alt="">
+                </article>
+            </div>
+        </div>
     </div>
 </body>
 
