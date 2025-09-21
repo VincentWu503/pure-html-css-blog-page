@@ -16,6 +16,7 @@ html, body{
    background-color: #F3EFF5;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    overflow-x:hidden;
 }
 
 header{
@@ -65,8 +66,20 @@ header h1{
 }
 
 /* muncul saat ukuran layar <= 600px */
-.hamburger-links-list{
+.hamburger-links-list ul{
     list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hamburger-contents .hamburger-links-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger-menu-button-container {
@@ -95,14 +108,21 @@ header h1{
 
 /* pilihan menu hamburger list saat width kecil */
 .header .hamburger-list {
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .hamburger-contents {
     display: none;
     text-align: center;
+    align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+.hamburger-link-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .hamburger-link-container>li a {
@@ -123,26 +143,24 @@ header h1{
     display: none;
     position: fixed;
     top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110%;
+    right: 0%;
+    width: 100%;
 }
 
 /* isi dari halaman blog */
 .page-container{
     color: black;
     padding-top: 96px;
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: center;
-    gap: 60px;
+    gap: 30px;
 }
 
 .page-container, .page-footer{
-    padding-left: 124px;
-    padding-right: 124px;
+    padding-left: 64px;
+    padding-right: 64px;
 }
 
 .page-footer{
@@ -179,19 +197,37 @@ header h1{
     padding-bottom: 16px;
 }
 
+/* hot topic dan latest */
+.left-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+}
+
+/* most popular dan weekly popular articles */
+.right-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    max-width: 450px;
+    gap: 36px;
+}
+
+.hot-news-container{
+    margin-bottom: 32px;
+}
+
 /* hot topic, widget terbesar */
 .hot-news-container, .latest-post-container{
     position: relative;
-    max-width: 760px;
-    min-height: 442px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-
 .hot-news-container .image-wrapper img{
-    width: 100%;
+    max-width: 100%;
     height: auto;
     overflow: hidden;
     display: block;
@@ -229,8 +265,9 @@ header h1{
     padding-bottom: 32px;
 }
 
+/* judul hot topic */
 .hot-news-container .hot-article-title-container a h2{
-    font-size: 32px;
+    font-size: 30px;
 }
 
 .latest-post-container{
@@ -244,6 +281,7 @@ header h1{
 
 
 .latest-post-container .latest-post-article-widget{
+    width: 100%;
     max-height: 256px;
     padding: 24px;
     padding-left: 0px;
@@ -275,33 +313,16 @@ header h1{
     text-align: right;
 }
 
-/* hot topic dan latest */
-.left-container{
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
 .pagination-button{
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 32px;
-    margin-top: 0px;
-}
-
-/* most popular dan weekly popular articles */
-.right-container{
-    display: flex;
-    flex-direction: column;
-    min-width: 450px;
-    max-width: 450px;
-    gap: 36px;
+    margin-top: 32px;
 }
 
 .most-popular-container{
-    max-width: 450px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -315,22 +336,68 @@ header h1{
 
 .popular-post-article-widget h2{
     font-size: 18px;
+    
 }
 
+/* all time & weekly */
 .most-popular-container h1{
     padding-bottom: 0px;
 }
 
-
+.hr-line {
+    display: flex;
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    opacity: 50%;
+}
 
 /* monitor kecil */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1258px) {
     header h1 {
         font-size: clamp(1.25rem, 3vw, 2rem);
     }
 
+    .page-container h1 {
+        font-size: clamp(2rem, 2vw, 3rem)
+    }
+
     .nav-link{
         font-size: clamp(0.9em, 2vw, 1.3em);
+    }
+
+    .hot-news-container .hot-article-title-container a h2 {
+        font-size: clamp(1.5rem, 2.25vw, 3rem);    
+    }
+
+    .latest-post-container .latest-post-article-widget img{
+        max-width: 218px;
+    }
+
+    .latest-post-container .latest-post-article-widget article a h2 {
+        font-size: clamp(1.5rem, 2vw, 3rem);
+    }
+
+    .latest-post-container .latest-post-article-widget {
+        padding-right: 0;
+    }
+
+    .left-container{
+        min-width: 500px;
+        max-width: 600px;
+    }
+
+    .hot-news-container .image-wrapper img{
+        max-width: 100%;
+    }
+
+    
+    .popular-post-article-widget img {
+        max-width: 128px;
+    }
+    
+    .right-container{
+        min-width: 400px;
+        max-width: 400px;
     }
 }
 
@@ -339,10 +406,48 @@ header h1{
     header{
         max-height: 53px;
     }   
+
+    .page-container{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .page-container h1 {
+        font-size: clamp(1.8rem, 2vw, 3rem);
+    }
+
+    .left-container{
+        max-width: 800px;
+    }
+
+    .right-container {
+        margin-top: -32px;
+        min-width: 800px;
+        max-width: 800px;
+        height: auto;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 32px;
+        align-items: flex-start;
+    }
+
+        .hot-news-container .hot-article-title-container {
+            padding: 24px;
+        }
+
+    .most-popular-container{
+        min-width: 50%;
+        width: auto;
+        max-width: 90%;
+    }
 }
 
 /* hp */
 @media only screen and (max-width: 600px) {
+    * {
+        font-size: 11.5px;
+    }
     .page-container {
         padding-top: 64px;
         padding-left: 24px;
@@ -353,6 +458,24 @@ header h1{
         font-size: clamp(1rem, 2vw + 1rem, 1.8rem);
         font-weight: 700;
         letter-spacing: 0.03em;
+    }
+
+        .redirect-button span svg {
+            width: 14px;
+            height: 14px;
+        }
+
+    .page-footer {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+        .hot-news-container .hot-article-title-container {
+            padding: 16px; 
+        }
+
+    .hot-news-container .hot-article-title-container a h2 {
+        font-size: clamp(0.5rem, 3vw + 0.5rem, 2.5rem);
     }
 
     #hamburger-menu-toggle:checked~.hamburger-contents {
@@ -370,4 +493,60 @@ header h1{
     .util-icons{
         margin-top:4px;
     }
+
+    .left-container, .right-container{
+        max-width: 562px;
+    }
+
+    .right-container{
+        min-width: 562px;
+    }
+
+    .popular-post-article-widget a h2{
+        font-size: clamp(1.2rem, 2vw, 3rem);
+    }
+    
+    .latest-post-container .latest-post-article-widget article a h2 {
+        font-size: clamp(1.25rem, 2vw, 3rem);
+    }
+
+    .latest-post-container .latest-post-article-widget img{
+        max-width: 160px;
+    }
+
+    .latest-post-container .latest-post-article-widget, 
+    .hr-line, .hot-news-container, 
+    .most-popular-container, 
+    .pagination-button{
+        width: clamp(8vw, 100%, 90vw);
+    }
+
+    .pagination-button{
+        transform: translateX(-5%);
+    }
+
+    .most-popular-container .popular-post-article-widget{
+        width: 100%;
+    }
+}
+
+/* penyesuaian ukuran gambar u/ hp kecil */
+@media only screen and (max-width: 480px){
+    .latest-post-container .latest-post-article-widget img {
+        max-width: 112px;
+    }
+    .popular-post-article-widget img {
+        max-width: 96px;
+    }
+
+    .latest-post-container .latest-post-article-widget,
+    .hr-line,
+    .hot-news-container,
+    .most-popular-container {
+        width: clamp(8vw, 100%, 87vw);
+    }
+
+                .pagination-button {
+                    transform: translateX(-8%);
+                }
 }
