@@ -27,7 +27,7 @@ header{
     padding-top: 5px;
     padding-left: 24px;
     padding-right: 24px;
-    position: absolute;
+    z-index: 1000;
 }
 
 header h1{
@@ -423,7 +423,7 @@ header h1{
 
     .right-container {
         margin-top: -32px;
-        min-width: 800px;
+        min-width: 654px;
         max-width: 800px;
         height: auto;
         flex-direction: column;
@@ -432,14 +432,13 @@ header h1{
         align-items: flex-start;
     }
 
-        .hot-news-container .hot-article-title-container {
-            padding: 24px;
-        }
+    .hot-news-container .hot-article-title-container {
+        padding: 24px;
+    }
 
     .most-popular-container{
-        min-width: 50%;
-        width: auto;
-        max-width: 90%;
+        width: clamp(70%, 80% + 10vw, 100%);
+        max-width: 100%;
     }
 }
 
@@ -470,9 +469,9 @@ header h1{
         padding-right: 32px;
     }
 
-        .hot-news-container .hot-article-title-container {
-            padding: 16px; 
-        }
+    .hot-news-container .hot-article-title-container {
+        padding: 16px; 
+    }
 
     .hot-news-container .hot-article-title-container a h2 {
         font-size: clamp(0.5rem, 3vw + 0.5rem, 2.5rem);
@@ -503,7 +502,7 @@ header h1{
     }
 
     .popular-post-article-widget a h2{
-        font-size: clamp(1.2rem, 2vw, 3rem);
+        font-size: clamp(1.2rem, 3vw, 3rem);
     }
     
     .latest-post-container .latest-post-article-widget article a h2 {
@@ -528,6 +527,10 @@ header h1{
     .most-popular-container .popular-post-article-widget{
         width: 100%;
     }
+
+    .hamburger-link-container>li a {
+        font-size: 14px;
+    }
 }
 
 /* penyesuaian ukuran gambar u/ hp kecil */
@@ -536,17 +539,24 @@ header h1{
         max-width: 112px;
     }
     .popular-post-article-widget img {
-        max-width: 96px;
+        max-width: 72px;
     }
 
     .latest-post-container .latest-post-article-widget,
     .hr-line,
-    .hot-news-container,
-    .most-popular-container {
-        width: clamp(8vw, 100%, 87vw);
+    .hot-news-container {
+        width: clamp(8vw, 100%, 85vw);
     }
 
-                .pagination-button {
-                    transform: translateX(-8%);
-                }
+    .most-popular-container {
+        width: clamp(8vw, 95%, 90vw);
+    }
+
+    .pagination-button {
+        transform: translateX(-8%);
+    }
+
+    .hamburger-link-container>li a {
+        font-size: 12px;
+    }
 }
