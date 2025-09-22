@@ -1,0 +1,148 @@
+*{
+    font-size: 14px;
+}
+
+.blog-page-container{
+    display: block;
+    width: 100%;
+}
+
+.blog-page-container .blog-contents-wrapper{
+    background-color: white;
+    width: 80%;
+    height: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    margin: 128px auto;
+    /* penambah adalah height header */
+    margin-top: calc(128px + 52px);
+    display: block;
+    padding: 64px;
+    line-height: 1.62;
+    text-align: justify;
+}
+
+.blog-page-container .blog-contents-wrapper .blog-title-wrapper h1{
+    text-align: center;
+    font-size: 28px;
+    display: block;
+}
+
+.blog-page-container .blog-contents-wrapper .blog-image-wrapper{
+    width: 60%;
+    vertical-align: top;
+    position: relative;
+    margin: 32px auto;
+    margin-bottom: 16px;
+}
+
+.blog-page-container .blog-contents-wrapper .blog-image-wrapper img{
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+.blog-page-container .blog-contents-wrapper .blog-details {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/* monitor kecil */
+@media only screen and (max-width: 1208px) {
+    .blog-page-container .blog-contents-wrapper {
+        padding: 48px;
+        margin: 112px auto;
+        /* penambah adalah height header */
+        margin-top: calc(112px + 52px);
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-title-wrapper h1 {  
+        font-size: 24px;
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-image-wrapper {
+        margin: 28px auto;
+        margin-bottom: 14px;
+    }
+}
+
+/* tablet kecil */
+@media only screen and (max-width: 992px) {
+    *{
+        font-size: 12.5px;
+    }
+
+    .blog-page-container .blog-contents-wrapper {
+        padding: 32px;
+        margin: 96px auto;
+        /* penambah adalah height header */
+        margin-top: calc(96px + 52px);
+    }
+
+    @media only screen and (max-width: 840px){
+        .blog-page-container .blog-contents-wrapper .blog-title-wrapper h1 {
+            font-size: 18px;
+        }
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-image-wrapper {
+        margin: 24px auto;
+        margin-bottom: 12px;
+    }
+}
+
+/* hp */
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 11.5px;
+    }
+
+    .blog-page-container .blog-contents-wrapper {
+        padding: 20px;
+        width: 85%;
+        margin: 64px auto;
+        /* penambah adalah height header */
+        margin-top: calc(64px + 52px);
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-title-wrapper h1 {
+        font-size: 16px;
+    }
+
+    #hamburger-menu-toggle:checked~.hamburger-contents {
+        display: flex;
+    }
+
+    .hamburger-menu-button-container {
+        display: flex;
+    }
+
+    .nav-contents {
+        display: none;
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-image-wrapper {
+        margin: 18px auto;
+        margin-bottom: 10px;
+    }
+}
+
+/* penyesuaian ukuran gambar u/ hp kecil */
+@media only screen and (max-width: 480px) {
+    *{
+        font-size: 10.75px;
+    }
+
+    .blog-page-container .blog-contents-wrapper {
+        padding: 16px;
+        width: 90%;
+        margin: 48px auto;
+        /* penambah adalah height header */
+        margin-top: calc(48px + 52px);
+    }
+
+    .blog-page-container .blog-contents-wrapper .blog-title-wrapper h1 {
+        font-size: 12px;
+    }
+}
